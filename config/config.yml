@@ -1,0 +1,79 @@
+model:
+  type: diffusion # dsm and diffusion
+  network: GDM
+  node_input_dim: 512
+  edge_input_dim: 512
+  hidden_dim: 256
+  all_num_layers: 3
+  cross_attention_mode: ['x2x','e2e']
+  dec_mode: ['joint','coatt']
+  node_mask_ratio: 0.6
+  edge_mask_ratio: 0.6
+  ehgnn_edge_ratio: 1.0
+  cutoff: 2
+  mlp_act: relu
+  beta_schedule: sigmoid
+  beta_start: 1.e-7
+  beta_end: 2.e-3
+  num_diffusion_timesteps: 1000
+  joint_depth: 2
+  joint_num_heads: 4
+  coatt_num_heads: 4
+  soft_edge: True
+  norm_coors: True
+  context: None 
+  vae_context: True
+  max_node_num: 1000
+  max_edge_num: 5000
+  origin_node_in_dim: 3072
+  origin_edge_in_dim: 3072
+  theta: 1000.0
+
+train:
+  proc_name: PATHDIFFUSION
+  gpu: 3
+  seed: 2024
+  batch_size: 32
+  val_freq: 20
+  max_iters: 250
+  save_freq: 25
+  node_alpha: 0.5
+  edge_alpha: 0.5
+  pos_alpha: 0.2
+  kl_alpha: 1
+  max_grad_norm: 10.0
+  num_workers: 4
+  anneal_power: 2.0
+  logdir: ./logs_fix
+  optimizer:
+    type: adam
+    lr: 1.e-4
+    weight_decay: 0.
+    beta1: 0.95
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.6
+    patience: 10
+    min_lr: 1.e-5
+  transform:
+    mask:
+      type: mixed
+      min_ratio: 0.0
+      max_ratio: 1.2
+      min_num_masked: 1
+      min_num_unmasked: 0
+      p_random: 0.5
+      p_bfs: 0.25
+      p_invbfs: 0.25
+    contrastive:
+      num_real: 50
+      num_fake: 50
+      pos_real_std: 0.05
+      pos_fake_std: 2.0
+
+dataset:
+  name: TCGA_path_datasets
+  train: 、/path_to/TISSUE_GRAPH
+
+

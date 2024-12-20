@@ -1,7 +1,2 @@
 # H-MGDM
-Official Implementation of H-MGDM
-For training:
-`bash.sh`
-
-For survival tasks, see:
-`survival/bash.sh`
+Official implementation of AAAI-2025 paper "Dynamic Entity-Masked Graph Diffusion Model for Histopathology Image Representation Learning"

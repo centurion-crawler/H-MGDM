@@ -11,7 +11,6 @@ from .transformer import Transformer
 from .transformer import MultiheadAttention as CoAttention
 from .common import MultiLayerPerceptron, assemble_pair_feature
 from .diffusion import get_timestep_embedding, get_beta_schedule
-from .geometry import get_distance, eq_transform
 
 from torch_geometric.deprecation import deprecated
 from torch_geometric.typing import OptTensor

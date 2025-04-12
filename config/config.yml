@@ -74,6 +74,6 @@ train:
 
 dataset:
   name: TCGA_path_datasets
-  train: 、/path_to/TISSUE_GRAPH
+  train: /path_to/TISSUE_GRAPH
 
 

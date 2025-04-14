@@ -46,10 +46,13 @@ bash survival.sh
 ## Citation
 
 ```
-@article{zhuang2024dynamic,
-  title={Dynamic Entity-Masked Graph Diffusion Model for histopathological image Representation Learning},
+@inproceedings{zhuang2025dynamic,
+  title={Dynamic Entity-Masked Graph Diffusion Model for Histopathology Image Representation Learning},
   author={Zhuang, Zhenfeng and Cen, Min and Li, Yanfeng and Zhou, Fangyu and Yu, Lequan and Magnier, Baptiste and Wang, Liansheng},
-  journal={arXiv preprint arXiv:2412.10482},
-  year={2024}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={10},
+  pages={11058--11066},
+  year={2025}
 }
 ```
